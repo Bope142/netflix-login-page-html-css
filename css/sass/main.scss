@@ -1,0 +1,208 @@
+@import "reset.scss";
+@import "variable.scss";
+
+html {
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+* {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-family: $fontRegular;
+  position: relative;
+  height: 100vh;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: flex;
+  background: rgba(173, 196, 238, 0.39);
+  height: 100vh;
+  width: 100%;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  & svg {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+.container__right {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin-left: 50px;
+  & .container__form {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    background: rgb(255, 255, 255) !important;
+    width: auto;
+    flex: none;
+    border-radius: 0.8rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+}
+
+.form__header {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  & .header__cover {
+    flex: none;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  & .header__profil__users {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    column-gap: 10px;
+    transform: translateY(-40%);
+    & .profil {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 85px;
+      width: 85px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      border: 5px solid white;
+      & img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    & h1 {
+      align-self: flex-end;
+      font-size: 1.2rem;
+      font-family: $fontMedium;
+      transform: translateY(-70%);
+      & span {
+        color: $neutral1;
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  transform: translateY(-10%);
+  & label {
+    font-size: 0.9rem;
+    font-family: $fontMedium;
+  }
+}
+
+.box__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  & .input_form {
+    border: none;
+    background-origin: 0.5rem;
+    padding: 20px;
+    font-family: $fontRegular;
+    font-size: 0.9rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+}
+
+.box__forgot-pswd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    & input {
+      accent-color: $neutral1;
+    }
+  }
+  a {
+    font-size: 0.9rem;
+    font-family: $fontRegular;
+    color: $neutral2;
+  }
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 15px;
+  font-size: 0.9rem;
+  font-family: $fontRegular;
+}
+
+#login-btn {
+  background: $neutral1;
+  color: white;
+}
+
+#text-or {
+  align-self: center;
+  font-family: $fontBold;
+}
+
+.form__button_action {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+#btn-new-login {
+  background: $neutral2;
+  color: white;
+}
+
+#btn-sgnup {
+  background: white;
+  color: $neutral1;
+  border: 1px solid $neutral1;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+}
